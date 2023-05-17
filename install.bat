@@ -6,4 +6,7 @@ curl -O https://raw.githubusercontent.com/lucasammer/iStatus/master/windows.py -
 cd %USERPROFILE%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
 curl -O https://raw.githubusercontent.com/lucasammer/iStatus/master/run.bat --insecure
 
+echo Done installing!
+pause
+
 run
