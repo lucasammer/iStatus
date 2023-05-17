@@ -1,4 +1,5 @@
 @echo off
+C:
 mkdir %appdata%\LucasAmmer\
 cd %appdata%\LucasAmmer
 curl -O https://raw.githubusercontent.com/lucasammer/iStatus/master/windows.py --insecure
