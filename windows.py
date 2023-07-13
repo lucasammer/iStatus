@@ -80,12 +80,15 @@ while True:
         # Update Presence
         RPC.update(details=title, state=showing, large_image=album_cover_url, buttons=[button,button1])
     except Exception as e:
+        RPC.disconnect()
         print(e)
         # If there is an error, blame the user for not having itunes opened
-        RPC.update(details="no itunes", state="itunes not opened :(", large_image="https://static.wikia.nocookie.net/0e9418e5-bf6c-4353-8702-5b7ec0b56a52/scale-to-width/755")
+        #       Actually dont blame the user, instead we now disconnect from discord, then reconnect if itues is found.
+        # RPC.update(details="no itunes", state="itunes not opened :(", large_image="https://static.wikia.nocookie.net/0e9418e5-bf6c-4353-8702-5b7ec0b56a52/scale-to-width/755")
         while True:
             # Wait for itunes to be opened
             if "iTunes.exe" in (p.name() for p in psutil.process_iter()):
+                RPC.connect()
                 break
             time.sleep(1)
         # Reconnect to itunes
