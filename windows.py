@@ -16,6 +16,8 @@ client_id = '1106665848346775623'
 RPC = pypresence.Presence(client_id=client_id)
 RPC.connect()
 
+interval = 1
+
 playing = ""
 foundDate = datetime(1,1,1)
 
@@ -88,3 +90,4 @@ while True:
             time.sleep(1)
         # Reconnect to itunes
         itunes = win32com.client.Dispatch('iTunes.Application')
+    sleep(interval)
