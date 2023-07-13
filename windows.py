@@ -93,4 +93,4 @@ while True:
             time.sleep(1)
         # Reconnect to itunes
         itunes = win32com.client.Dispatch('iTunes.Application')
-    sleep(interval)
+    time.sleep(interval)
